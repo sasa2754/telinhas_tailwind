@@ -1,101 +1,76 @@
 import Image from "next/image";
 
+import capa from '../img/capa_musica.webp';
+import seta from '../img/icon/seta.png';
+import menu from '../img/icon/menu.png';
+import coracao from '../img/icon/coracao.png';
+import play from '../img/icon/play.png';
+import proximo from '../img/icon/proximo.png';
+import anterior from '../img/icon/anterior.png';
+import aleatorio from '../img/icon/aleatorio.png';
+import repetir from '../img/icon/repetir.png';
+import computador from '../img/icon/computador.png';
+import share from '../img/icon/compartilhar.png';
+import lista from '../img/icon/lista.png';
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <section className="bg-gradient-to-b from-fuchsia-800 from-10% to-slate-800 to-70% p-5 h-screen w-full flex flex-col justify-center">
+        
+        {/* Parte de cima */}
+        <div className="flex flex-row justify-between items-center">
+          <Image className="pb-10 w-5 pt-5" src={seta} alt="seta"/>
+          <div className="text-white flex items-center flex-col">
+            <h3>Playing from playlist</h3>
+            <h5>Daily Drive</h5>
+          </div>
+          <Image className="pb-10 w-5 pt-5" src={menu} alt="menu"/>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Capa da música */}
+        <Image className="max-w-96 w-full pb-14 pt-12 m-auto" src={capa} alt="imagem da capa"/>
+
+        {/* Nome da música e coração */}
+        <div className="flex flex-row justify-between items-center pb-10">
+          <div className="flex flex-col">
+            <h1 className="text-white text-xl">Disconnected</h1>
+            <h2 className="text-neutral-400">Vinicio</h2>
+          </div>
+          <Image className="w-8" src={coracao} alt="imagem do like"/>
+        </div>
+
+        {/* Barrinha de progresso */}
+        <div className="flex flex-col justify-center pb-2">
+          <div className="w-2 h-2 rounded-full bg-neutral-400 absolute left-10"></div>
+          <div className="w-50 h-0.5 bg-neutral-400"></div>
+        </div>
+        <div className="text-neutral-400 flex flex-row items-center justify-between pb-3">
+          <h6>0:06</h6>
+          <h6>5:26</h6>
+        </div>
+
+        {/* Botões */}
+        <div className="flex flex-row justify-between items-center pb-5">
+        <Image className="w-8 h-8" src={aleatorio} alt="imagem do play"/>
+          <div className="flex flex-row items-center justify-between w-56">
+            <Image className="w-10" src={anterior} alt="imagem do play"/>
+            <Image className="w-20" src={play} alt="imagem do play"/>
+            <Image className="w-10" src={proximo} alt="imagem do play"/>
+          </div>
+          <Image className="w-8 h-8" src={repetir} alt="imagem do play"/>
+        </div>
+
+        <div className="flex flex-row justify-between items-center">
+          <Image className="w-10 h-10" src={computador} alt="imagem do play"/>
+          <div className="flex flex-row gap-3 items-center">
+            <Image className="w-8 h-8" src={share} alt="imagem do play"/>
+            <Image className="w-12 h-12" src={lista} alt="imagem do play"/>
+          </div>
+        </div>
+      </section>
+
+    </>
+ 
   );
 }
